@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isCallActive = false;
     let ivrState = 'inactive';
 
-    const API_ENDPOINT_WHATSAPP = 'https://http.msging.net/commands';
+    const API_ENDPOINT_WHATSAPP = 'https://smartlabcda.http.msging.net/commands';
     
     // ==========================================================
     // NOVA LÓGICA CENTRALIZADA DE TECLADO FÍSICO
@@ -292,4 +292,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const secs = (seconds % 60).toString().padStart(2, '0');
         callTimerDisplay.textContent = `${mins}:${secs}`;
     }
+
 });
