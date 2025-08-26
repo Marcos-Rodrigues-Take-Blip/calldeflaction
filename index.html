@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discador de Telefone - Mockup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="dark-mode">
+
+    <div class="smartphone">
+        <div class="screen">
+            <div id="dialer-screen">
+                <div class="status-bar">
+                    <span id="time">15:30</span>
+                    <span>
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </span>
+                </div>
+
+                <div class="number-display-container">
+                    <div id="number-display"></div>
+                    <span id="api-status" class="api-status-message"></span>
+                </div>
+
+                <div class="keypad">
+                    <button class="keypad-btn" data-value="1">1<span> </span></button>
+                    <button class="keypad-btn" data-value="2">2<span>ABC</span></button>
+                    <button class="keypad-btn" data-value="3">3<span>DEF</span></button>
+                    <button class="keypad-btn" data-value="4">4<span>GHI</span></button>
+                    <button class="keypad-btn" data-value="5">5<span>JKL</span></button>
+                    <button class="keypad-btn" data-value="6">6<span>MNO</span></button>
+                    <button class="keypad-btn" data-value="7">7<span>PQRS</span></button>
+                    <button class="keypad-btn" data-value="8">8<span>TUV</span></button>
+                    <button class="keypad-btn" data-value="9">9<span>WXYZ</span></button>
+                    <button class="keypad-btn" data-value="*">*</button>
+                    <button class="keypad-btn" data-value="0">0<span>+</span></button>
+                    <button class="keypad-btn" data-value="#">#</button>
+                </div>
+
+                <div class="actions">
+                    <button id="call-btn"><i class="fa-solid fa-phone"></i></button>
+                    <button id="backspace-btn" class="hidden"><i class="fa-solid fa-delete-left"></i></button>
+                </div>
+            </div>
+
+            <div id="call-screen" class="hidden">
+    <div class="status-bar">
+        <span id="time-call">15:30</span>
+        <span>
+            <i class="fa-solid fa-signal"></i>
+            <i class="fa-solid fa-wifi"></i>
+            <i class="fa-solid fa-battery-three-quarters"></i>
+        </span>
+    </div>
+
+    <div class="call-info">
+        <h2 id="calling-number"></h2>
+        <p id="call-timer">ligando...</p>
+        <h3 id="dtmf-display"></h3>
+        <p id="call-api-status" class="api-status-message"></p>
+    </div>
+    
+    <div id="in-call-keypad" class="keypad hidden">
+        <button class="keypad-btn" data-value="1">1<span> </span></button>
+        <button class="keypad-btn" data-value="2">2<span>ABC</span></button>
+        <button class="keypad-btn" data-value="3">3<span>DEF</span></button>
+        <button class="keypad-btn" data-value="4">4<span>GHI</span></button>
+        <button class="keypad-btn" data-value="5">5<span>JKL</span></button>
+        <button class="keypad-btn" data-value="6">6<span>MNO</span></button>
+        <button class="keypad-btn" data-value="7">7<span>PQRS</span></button>
+        <button class="keypad-btn" data-value="8">8<span>TUV</span></button>
+        <button class="keypad-btn" data-value="9">9<span>WXYZ</span></button>
+        <button class="keypad-btn" data-value="*">*</button>
+        <button class="keypad-btn" data-value="0">0<span>+</span></button>
+        <button class="keypad-btn" data-value="#">#</button>
+    </div>
+    
+    <div class="call-actions">
+         <button id="end-call-btn"><i class="fa-solid fa-phone-slash"></i></button>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+    <audio id="calling-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" preload="auto" loop></audio>
+    <audio id="audio-intro" src="https://blipmediastore.blob.core.windows.net/public-medias/Media_e5e5658e-6a7a-401e-84d9-d8d1d9199c79" preload="auto"></audio>
+    <audio id="audio-whatsapp" src="https://blipmediastore.blob.core.windows.net/public-medias/Media_cf792b6b-b248-48ec-b1db-0ad5973a5e61" preload="auto"></audio>
+    <audio id="audio-error" src="https://blipmediastore.blob.core.windows.net/public-medias/Media_b8bbac3d-8c9e-4d0d-84b2-e9767669110b" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.smartphone {
+    width: 375px;
+    height: 812px;
+    background-color: #1c1c1e;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+}
+
+#dialer-screen, #call-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Status Bar */
+.status-bar {
+    padding: 20px 25px 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    background-color: #f5f5f7;
+    margin: 0 4px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 1px solid #dcdcdc; /* Divisão entre status e display */
+}
+#call-screen .status-bar {
+    color: #fff;
+    background-color: transparent;
+    margin: 0;
+    border-bottom: none; /* Remove a borda na tela de chamada */
+}
+.status-bar span i {
+    margin-left: 6px;
+}
+
+/* Display de Número */
+.number-display-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f7;
+    border-bottom: 1px solid #dcdcdc;
+    margin: 0 4px;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+#number-display {
+    height: 60px;
+    font-size: 48px;
+    font-weight: 300;
+    color: #333;
+    word-wrap: break-word;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Teclado */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px 30px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.keypad-btn {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    margin: 0 auto;
+}
+
+.keypad-btn:active {
+    background-color: #c7c7c7;
+}
+
+.keypad-btn span {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: -2px;
+}
+
+/* Botões de Ação (Ligar/Apagar) - Tela de Discagem */
+.actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 30px 40px 30px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#call-btn {
+    background-color: #34c759;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#call-btn:active {
+    background-color: #2ca349;
+}
+
+#backspace-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+    opacity: 1;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+#backspace-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Tela de Chamada */
+#call-screen {
+    background: linear-gradient(180deg, #5b6269 0%, #3b4249 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.call-info {
+    text-align: center;
+    padding-top: 80px;
+    flex-grow: 1; 
+}
+
+.call-info h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.call-info p {
+    font-size: 20px;
+    color: #b0b0b0;
+}
+
+#dtmf-display {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    height: 35px;
+    margin: 10px 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#in-call-keypad {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+/* Botão de Ação (Desligar) - Tela de Chamada */
+.call-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 40px 0;
+}
+
+#end-call-btn {
+    background-color: #ff3b30;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#end-call-btn:active {
+    background-color: #d93228;
+}
+
+.api-status-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #34c759;
+    height: 20px;
+    font-weight: 500;
+}
+
+/* =================================== */
+/* =========== TEMA ESCURO =========== */
+/* =================================== */
+
+body.dark-mode {
+    background-color: #121212;
+}
+
+body.dark-mode .screen {
+    background-color: #000;
+}
+
+body.dark-mode .number-display-container {
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #3a3a3c;
+}
+
+body.dark-mode .status-bar {
+    color: #e0e0e0;
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #3a3a3c; /* Divisão para tema escuro */
+}
+
+body.dark-mode #number-display {
+    color: #fff;
+}
+
+body.dark-mode .keypad,
+body.dark-mode .actions {
+    background-color: #000;
+}
+
+/* Regra única para TODOS os teclados no modo escuro */
+body.dark-mode .keypad-btn {
+    background-color: #3a3a3c;
+    color: #fff;
+}
+
+body.dark-mode .keypad-btn:active {
+    background-color: #5a5a5c;
+}
+
+body.dark-mode #backspace-btn {
+    color: #a0a0a0;
+}
+
+body.dark-mode #call-screen .status-bar {
+    color: #fff;
+    background-color: transparent;
+    border-bottom: none; /* Garante que não tenha borda na tela de chamada */
+}
+
+/* O bloco incorreto para #in-call-keypad foi removido daqui */
