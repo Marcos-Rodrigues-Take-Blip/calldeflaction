@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(API_ENDPOINT_WHATSAPP, {
                 method: 'POST',
-                headers: {'Authorization': 'Key cm90ZWFkb3JzbWFydGxhYjpmUXV6eDNOcUpmZ01qVnB5UGNUUA==','Content-Type': 'application/json',},
+                headers: {'Authorization': '${{ env.key }}','Content-Type': 'application/json',},
                 body: JSON.stringify(payload)
             });
             if (!response.ok) throw new Error(`Erro na API: ${response.statusText}`);
@@ -294,3 +294,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
